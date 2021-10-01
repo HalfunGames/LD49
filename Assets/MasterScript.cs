@@ -22,11 +22,11 @@ public class MasterScript : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow))
             {
-                player.GetComponent<Rigidbody2D>().AddForce(new Vector2(1f, 0f));
+                player.GetComponent<Rigidbody2D>().AddForce(new Vector2(Force, 0f));
             }
             if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow))
             {
-                player.GetComponent<Rigidbody2D>().AddForce(new Vector2(-1f, 0f));
+                player.GetComponent<Rigidbody2D>().AddForce(new Vector2(-Force, 0f));
             }
         }
     }
