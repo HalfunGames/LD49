@@ -7,6 +7,7 @@ public class MasterScript : MonoBehaviour
 
     public GameObject ground;
     public GameObject player;
+    public float Force;
 
     // Start is called before the first frame update
     void Start()
