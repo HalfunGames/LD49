@@ -40,5 +40,28 @@ public class MasterScript : MonoBehaviour
                 ground.GetComponent<Rigidbody2D>().AddForce(new Vector2(Force * Time.deltaTime, 0f));
             }
         }
+        if (Random.Range(0f, 1f) < 0.5f)
+        {
+            if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow))
+            {
+                ground.GetComponent<Rigidbody2D>().AddTorque(-Force * Time.deltaTime, 0f);
+            }
+            if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow))
+            {
+                ground.GetComponent<Rigidbody2D>().AddTorque(Force * Time.deltaTime, 0f);
+            }
+        }
+        else
+        {
+            if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow))
+            {
+                ground.GetComponent<Rigidbody2D>().AddForce(new Vector2(0f, Force * Time.deltaTime));
+            }
+            if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow))
+            {
+                ground.GetComponent<Rigidbody2D>().AddForce(new Vector2(0f, -Force * Time.deltaTime));
+            }
+        }
+
     }
 }
