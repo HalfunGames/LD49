@@ -1,6 +1,9 @@
+using System.ComponentModel;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class MasterScript : MonoBehaviour
 {
@@ -8,6 +11,8 @@ public class MasterScript : MonoBehaviour
     public GameObject ground;
     public GameObject player;
     public float Force;
+    public TextMeshProUGUI TargetValueText;
+    public TextMeshProUGUI ControlValueText;
 
     // Start is called before the first frame update
     void Start()
@@ -18,7 +23,8 @@ public class MasterScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float TargetValue = Random.Range(0f, 1f);
+        float TargetValue = UnityEngine.Random.Range(0f, 1f);
+        float ControlValue = UnityEngine.Random.Range(0f, 1f);
         if (TargetValue < 0.5f)
         {
             if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow))
@@ -41,7 +47,7 @@ public class MasterScript : MonoBehaviour
                 ground.GetComponent<Rigidbody2D>().AddForce(new Vector2(Force * Time.deltaTime, 0f));
             }
         }
-        if (Random.Range(0f, 1f) < 0.5f)
+        if (ControlValue < 0.5f)
         {
             if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow))
             {
@@ -63,6 +69,9 @@ public class MasterScript : MonoBehaviour
                 ground.GetComponent<Rigidbody2D>().AddForce(new Vector2(0f, -Force * Time.deltaTime));
             }
         }
+
+        TargetValueText.text = TargetValue.ToString("#.00");
+        ControlValueText.text = ControlValue.ToString("#.00");
 
     }
 }
