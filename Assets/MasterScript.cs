@@ -19,9 +19,9 @@ public class MasterScript : MonoBehaviour
     {
         if (Random.Range(0f, 1f) < 0.5f)
         {
-            if (Input.GetButtonDown("Left"))
+            if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow))
             {
-
+                player.GetComponent<Rigidbody2D>().AddForce(new Vector2(1f, 0f));
             }
         }
     }
