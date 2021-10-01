@@ -23,6 +23,10 @@ public class MasterScript : MonoBehaviour
             {
                 player.GetComponent<Rigidbody2D>().AddForce(new Vector2(1f, 0f));
             }
+            if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow))
+            {
+                player.GetComponent<Rigidbody2D>().AddForce(new Vector2(-1f, 0f));
+            }
         }
     }
 }
