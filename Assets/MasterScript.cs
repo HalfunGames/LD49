@@ -18,7 +18,8 @@ public class MasterScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Random.Range(0f, 1f) < 0.5f)
+        float TargetValue = Random.Range(0f, 1f);
+        if (TargetValue < 0.5f)
         {
             if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow))
             {
