@@ -101,6 +101,11 @@ public class MasterScript : MonoBehaviour
     {
         if (GameStart)
         {
+            if (Difficulty == 0 && Input.GetKeyDown(KeyCode.Space))
+            {
+                ground.GetComponent<Rigidbody2D>().angularVelocity = 0;
+                ground.GetComponent<Rigidbody2D>().SetRotation(0);
+            }
             if (TargetValue < 0.5f)
             {
                 TargetValueText.text = "Player";
