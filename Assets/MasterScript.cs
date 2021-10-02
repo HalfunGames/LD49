@@ -36,6 +36,15 @@ public class MasterScript : MonoBehaviour
         StartCoroutine("InstabilityMatrix");
     }
 
+    void Restart()
+    {
+        ground.transform.position = new Vector3(0, -5, 0);
+        player.transform.position = new Vector3(0, 0, 0);
+        ground.GetComponent<Rigidbody2D>().SetRotation(0);
+        ground.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
+        ground.GetComponent<Rigidbody2D>().angularVelocity = 0;
+    }
+
     // Update is called once per frame
     void Update()
     {
