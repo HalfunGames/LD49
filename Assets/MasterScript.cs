@@ -58,11 +58,13 @@ public class MasterScript : MonoBehaviour
     public void setMedium()
     {
         Difficulty = 1;
+        player.GetComponent<Rigidbody2D>().gravityScale = 0.5f;
     }
 
     public void setNormal()
     {
         Difficulty = 3;
+        player.GetComponent<Rigidbody2D>().gravityScale = 1;
     }
 
     void Restart()
