@@ -71,6 +71,7 @@ public class MasterScript : MonoBehaviour
         minTime = 1f;
         maxTime = 2f;
         DifficultyText.text = "Easy Mode";
+        Score = 0;
         StartGame();
     }
 
@@ -81,6 +82,7 @@ public class MasterScript : MonoBehaviour
         minTime = 0.75f;
         maxTime = 1.5f;
         DifficultyText.text = "Medium Mode";
+        Score = 0;
         StartGame();
     }
 
@@ -91,6 +93,7 @@ public class MasterScript : MonoBehaviour
         minTime = 0.5f;
         maxTime = 1f;
         DifficultyText.text = "Normal Mode";
+        Score = 0;
         StartGame();
     }
 
