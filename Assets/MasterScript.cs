@@ -114,5 +114,10 @@ public class MasterScript : MonoBehaviour
 
         }
 
+        if (Score < player.transform.position.y)
+        {
+            Score = player.transform.position.y;
+        }
+
     }
 }
