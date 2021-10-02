@@ -15,7 +15,7 @@ public class MasterScript : MonoBehaviour
     public float TargetValue;
     public float ControlValue;
     public bool CoroutineStop = false;
-    private bool Paused = true;
+    private bool Paused = false;
     private bool GameStart = false;
 
     public GameObject PauseMenu;
@@ -40,12 +40,12 @@ public class MasterScript : MonoBehaviour
 
     private void Start()
     {
-        Time.timeScale = 0;
+        Pause();
     }
     public void StartGame()
     {
         Restart();
-        Time.timeScale = 1;
+        Pause();
     }
 
     public void setEasy()
@@ -77,6 +77,22 @@ public class MasterScript : MonoBehaviour
 
         CoroutineStop = true;
         StartCoroutine("InstabilityMatrix");
+    }
+
+    void Pause()
+    {
+        if (Paused)
+        {
+            Time.timeScale = 1;
+            Paused = false;
+            PauseMenu.SetActive(true);
+        }
+        else
+        {
+            Time.timeScale = 0;
+            Paused = true;
+            PauseMenu.SetActive(false);
+        }
     }
 
     // Update is called once per frame
@@ -147,18 +163,7 @@ public class MasterScript : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.P))
         {
-            if (Paused)
-            {
-                Time.timeScale = 1;
-                Paused = false;
-                PauseMenu.SetActive(true);
-            }
-            else
-            {
-                Time.timeScale = 0;
-                Paused = true;
-                PauseMenu.SetActive(false);
-            }
+            Pause();
         }
 
     }
