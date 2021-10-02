@@ -16,6 +16,7 @@ public class MasterScript : MonoBehaviour
 
     IEnumerator InstabilityMatrix()
     {
+        CoroutineStop = false;
         while (!CoroutineStop)
         {
             float TVDif = (Mathf.Abs(TargetValue - 0.5f) + 0.3f);
@@ -40,9 +41,16 @@ public class MasterScript : MonoBehaviour
     {
         ground.transform.position = new Vector3(0, -5, 0);
         player.transform.position = new Vector3(0, 0, 0);
+
         ground.GetComponent<Rigidbody2D>().SetRotation(0);
         ground.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
         ground.GetComponent<Rigidbody2D>().angularVelocity = 0;
+        player.GetComponent<Rigidbody2D>().SetRotation(0);
+        player.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
+        player.GetComponent<Rigidbody2D>().angularVelocity = 0;
+
+        TargetValue = 0.5f;
+        ControlValue = 0.5f;
     }
 
     // Update is called once per frame
