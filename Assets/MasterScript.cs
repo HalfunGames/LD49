@@ -18,6 +18,8 @@ public class MasterScript : MonoBehaviour
     {
         yield return new WaitForSeconds(1.5f);
         CoroutineStop = false;
+        TargetValue = 0f;
+        ControlValue = 1f;
         while (!CoroutineStop)
         {
             float TVDif = (Mathf.Abs(TargetValue - 0.5f) + 0.3f);
@@ -32,8 +34,6 @@ public class MasterScript : MonoBehaviour
 
     private void Start()
     {
-        TargetValue = 0f;
-        ControlValue = 1f;
         StartCoroutine("InstabilityMatrix");
     }
 
@@ -48,9 +48,6 @@ public class MasterScript : MonoBehaviour
         player.GetComponent<Rigidbody2D>().SetRotation(0);
         player.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
         player.GetComponent<Rigidbody2D>().angularVelocity = 0;
-
-        TargetValue = 0f;
-        ControlValue = 1f;
 
         CoroutineStop = true;
         StartCoroutine("InstabilityMatrix");
