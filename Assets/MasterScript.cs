@@ -16,6 +16,7 @@ public class MasterScript : MonoBehaviour
     public float ControlValue;
     public bool CoroutineStop = false;
     private bool Paused = false;
+    private bool GameStart = false;
 
     public GameObject PauseMenu;
 
@@ -40,6 +41,10 @@ public class MasterScript : MonoBehaviour
     private void Start()
     {
         Time.timeScale = 0;
+    }
+    public void StartGame()
+    {
+
     }
 
     void Restart()
