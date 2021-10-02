@@ -39,7 +39,7 @@ public class MasterScript : MonoBehaviour
 
     private void Start()
     {
-        StartCoroutine("InstabilityMatrix");
+        Time.timeScale = 0;
     }
 
     void Restart()
