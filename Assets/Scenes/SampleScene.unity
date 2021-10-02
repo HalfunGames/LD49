@@ -232,7 +232,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 115.82556, y: 14.825}
+  m_AnchoredPosition: {x: 115.82556, y: 14.825012}
   m_SizeDelta: {x: 213.3893, y: 17.4801}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &235887263
@@ -1559,7 +1559,7 @@ MonoBehaviour:
   TargetValue: 0
   ControlValue: 0
   CoroutineStop: 0
-  PauseMenu: {fileID: 0}
+  PauseMenu: {fileID: 1603403446}
   Difficulty: 0
 --- !u!4 &1059048651
 Transform:
