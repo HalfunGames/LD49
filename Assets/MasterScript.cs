@@ -60,6 +60,7 @@ public class MasterScript : MonoBehaviour
     {
         Restart();
         Pause();
+        GameStart = true;
     }
 
     public void setEasy()
