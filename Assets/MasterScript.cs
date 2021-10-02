@@ -51,17 +51,17 @@ public class MasterScript : MonoBehaviour
 
     public void setEasy()
     {
-
+        Difficulty = 0;
     }
 
     public void setMedium()
     {
-
+        Difficulty = 1;
     }
 
     public void setNormal()
     {
-
+        Difficulty = 3;
     }
 
     void Restart()
