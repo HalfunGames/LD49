@@ -640,6 +640,8 @@ MonoBehaviour:
   ground: {fileID: 1586465364}
   player: {fileID: 1972998668}
   Force: 1
+  TargetValueText: {fileID: 676921158}
+  ControlValueText: {fileID: 823954362}
 --- !u!4 &1059048651
 Transform:
   m_ObjectHideFlags: 0
@@ -1169,7 +1171,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
@@ -1340,7 +1342,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
