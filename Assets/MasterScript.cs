@@ -119,5 +119,7 @@ public class MasterScript : MonoBehaviour
             Score = player.transform.position.y;
         }
 
+        ScoreValueText.text = Score;
+
     }
 }
