@@ -130,6 +130,7 @@ public class MasterScript : MonoBehaviour
             {
                 Time.timeScale = 1;
                 Paused = false;
+                PauseMenu.setDisabled(true);
             }
             else
             {
