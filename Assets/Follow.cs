@@ -6,7 +6,7 @@ public class Follow : MonoBehaviour
 {
     public GameObject Target;
     public Vector3 Offset;
-    public float LagConstant;
+    public float LagConstant = 1;
 
     // Update is called once per frame
     void Update()
