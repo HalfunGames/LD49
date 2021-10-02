@@ -105,5 +105,12 @@ public class MasterScript : MonoBehaviour
         TargetValueText.text = TargetValue.ToString("#.00");
         ControlValueText.text = ControlValue.ToString("#.00");
 
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            Restart();
+
+
+        }
+
     }
 }
