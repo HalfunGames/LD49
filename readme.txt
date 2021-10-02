@@ -30,3 +30,5 @@ v2 Hopes
 - Better Sky BG
 - High Score System? (Cool if could connect online...)
 - Grafics update?
+- Cut Scene/Story
+- Custom Game
