@@ -17,6 +17,8 @@ public class MasterScript : MonoBehaviour
     public bool CoroutineStop = false;
     private bool Paused = false;
 
+    public GameObject PauseMenu;
+
     IEnumerator InstabilityMatrix()
     {
         TargetValue = 0f;
@@ -133,6 +135,7 @@ public class MasterScript : MonoBehaviour
             {
                 Time.timeScale = 0;
                 Paused = true;
+                PauseMenu.setDisabled(false);
             }
         }
 
