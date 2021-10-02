@@ -13,7 +13,7 @@ Changelog
 v0
 - Made the actual Game
 
-v1 Planned
+v1
 - Add Version Number to UI
 - Add Controls to UI
 - Add Difficulty Options
@@ -24,11 +24,13 @@ v1 Planned
 - Pause Screen
 - Score System
 
-v2 Hopes
-- Sound?
-- Music?
+v2 Planned
+- Sound
+- Music
+- Custom Game
+- High Score System (Player prefs file)
+
+v3 Hopes
 - Better Sky BG
-- High Score System? (Cool if could connect online...)
 - Grafics update?
 - Cut Scene/Story
-- Custom Game
