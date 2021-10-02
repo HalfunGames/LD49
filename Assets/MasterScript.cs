@@ -103,6 +103,7 @@ public class MasterScript : MonoBehaviour
         {
             if (TargetValue < 0.5f)
             {
+                TargetValueText.text = "Player";
                 if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
                 {
                     player.GetComponent<Rigidbody2D>().AddForce(new Vector2(-Force * Time.deltaTime, 0f));
@@ -114,6 +115,7 @@ public class MasterScript : MonoBehaviour
             }
             else
             {
+                TargetValueText.text = "Ground";
                 if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
                 {
                     ground.GetComponent<Rigidbody2D>().AddForce(new Vector2(-Force * Time.deltaTime, 0f));
@@ -125,6 +127,8 @@ public class MasterScript : MonoBehaviour
             }
             if (ControlValue < 0.5f)
             {
+
+                ControlValueText.text = "Rotation";
                 if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
                 {
                     ground.GetComponent<Rigidbody2D>().AddTorque(-Force * Time.deltaTime, 0f);
@@ -136,6 +140,8 @@ public class MasterScript : MonoBehaviour
             }
             else
             {
+
+                ControlValueText.text = "Vertical";
                 if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
                 {
                     ground.GetComponent<Rigidbody2D>().AddForce(new Vector2(0f, Force * Time.deltaTime));
@@ -146,14 +152,10 @@ public class MasterScript : MonoBehaviour
                 }
             }
 
-            TargetValueText.text = TargetValue.ToString("#.00");
-            ControlValueText.text = ControlValue.ToString("#.00");
 
             if (Input.GetKeyDown(KeyCode.R))
             {
                 Restart();
-
-
             }
 
             if (Score < player.transform.position.y)
