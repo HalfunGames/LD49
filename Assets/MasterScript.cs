@@ -15,6 +15,7 @@ public class MasterScript : MonoBehaviour
     public float TargetValue;
     public float ControlValue;
     public bool CoroutineStop = false;
+    private bool Paused = false;
 
     IEnumerator InstabilityMatrix()
     {
