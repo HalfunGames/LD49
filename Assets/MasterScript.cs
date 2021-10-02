@@ -29,6 +29,8 @@ public class MasterScript : MonoBehaviour
 
     private void Start()
     {
+        TargetValue = 0.5;
+        ControlValue = 0.5
         StartCoroutine("InstabilityMatrix");
     }
 
