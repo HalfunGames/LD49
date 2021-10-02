@@ -19,7 +19,7 @@ public class MasterScript : MonoBehaviour
     private bool GameStart = false;
 
     public GameObject PauseMenu;
-    public int Difficulty; // 0 - Easy, 1 - Medium, 2 - Normal
+    public int Difficulty = 0; // 0 - Easy, 1 - Medium, 2 - Normal
     private float minTime;
     private float maxTime;
 
@@ -67,6 +67,7 @@ public class MasterScript : MonoBehaviour
         player.GetComponent<Rigidbody2D>().gravityScale = 0;
         minTime = 1f;
         maxTime = 2f;
+        StartGame();
     }
 
     public void setMedium()
@@ -75,6 +76,7 @@ public class MasterScript : MonoBehaviour
         player.GetComponent<Rigidbody2D>().gravityScale = 0.5f;
         minTime = 0.75f;
         maxTime = 1.5f;
+        StartGame();
     }
 
     public void setNormal()
@@ -83,6 +85,7 @@ public class MasterScript : MonoBehaviour
         player.GetComponent<Rigidbody2D>().gravityScale = 1;
         minTime = 0.5f;
         maxTime = 1f;
+        StartGame();
     }
 
     void Restart()
@@ -111,7 +114,10 @@ public class MasterScript : MonoBehaviour
         }
         else
         {
-            Time.timeScale = 0;
+            if (Difficulty != 3)
+            {
+                Time.timeScale = 0;
+            }
             Paused = true;
             PauseMenu.SetActive(false);
         }
