@@ -17,7 +17,7 @@ v1 Planned
 - Add Version Number to UI
 - Add Controls to UI
 - Add Difficulty Options
-    - Easy -> Can reset ground rotation, slower changes to control scheme, less gravity
+    - Easy -> Can reset ground rotation, slower changes to control scheme, no gravity
     - Medium -> Slower changes + Less gravity
     - Normal -> v0
 - Main Menu
