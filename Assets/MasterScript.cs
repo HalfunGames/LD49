@@ -10,6 +10,8 @@ public class MasterScript : MonoBehaviour
     public float Force;
     public TextMeshProUGUI TargetValueText;
     public TextMeshProUGUI ControlValueText;
+    public TextMeshProUGUI ScoreValueText;
+    public float Score = 0;
     public float TargetValue;
     public float ControlValue;
     public bool CoroutineStop = false;
