@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 235887264}
   - component: {fileID: 235887263}
   m_Layer: 5
-  m_Name: Info (1)
+  m_Name: Version
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1176,6 +1176,8 @@ MonoBehaviour:
   Force: 1000
   TargetValueText: {fileID: 676921158}
   ControlValueText: {fileID: 823954362}
+  ScoreValueText: {fileID: 400254360}
+  Score: 0
   TargetValue: 0
   ControlValue: 0
   CoroutineStop: 0

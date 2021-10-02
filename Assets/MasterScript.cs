@@ -119,7 +119,7 @@ public class MasterScript : MonoBehaviour
             Score = player.transform.position.y;
         }
 
-        ScoreValueText.text = Score.ToString("#.00000");
+        ScoreValueText.text = Score.ToString("#.000");
 
     }
 }
