@@ -18,8 +18,8 @@ public class MasterScript : MonoBehaviour
     {
         while (!CoroutineStop)
         {
-            float TVDif = (Mathf.Abs(TargetValue - 0.5f) + 0.1f);
-            float CVDif = (Mathf.Abs(ControlValue - 0.5f) + 0.1f);
+            float TVDif = (Mathf.Abs(TargetValue - 0.5f) + 0.3f);
+            float CVDif = (Mathf.Abs(ControlValue - 0.5f) + 0.3f);
             TargetValue += UnityEngine.Random.Range(-TVDif, TVDif);
             ControlValue += UnityEngine.Random.Range(-CVDif, CVDif);
             Mathf.Clamp(TargetValue, 0f, 1f);
