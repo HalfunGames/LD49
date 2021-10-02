@@ -16,10 +16,10 @@ public class MasterScript : MonoBehaviour
 
     IEnumerator InstabilityMatrix()
     {
-        yield return new WaitForSeconds(1.5f);
-        CoroutineStop = false;
         TargetValue = 0f;
         ControlValue = 1f;
+        yield return new WaitForSeconds(1.5f);
+        CoroutineStop = false;
         while (!CoroutineStop)
         {
             float TVDif = (Mathf.Abs(TargetValue - 0.5f) + 0.3f);
