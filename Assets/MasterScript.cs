@@ -22,8 +22,8 @@ public class MasterScript : MonoBehaviour
             float CVDif = (Mathf.Abs(ControlValue - 0.5f) + 0.3f);
             TargetValue += UnityEngine.Random.Range(-TVDif, TVDif);
             ControlValue += UnityEngine.Random.Range(-CVDif, CVDif);
-            Mathf.Clamp(TargetValue, 0f, 1f);
-            Mathf.Clamp(ControlValue, 0f, 1f);
+            TargetValue = Mathf.Clamp(TargetValue, 0f, 1f);
+            ControlValue = Mathf.Clamp(ControlValue, 0f, 1f);
             yield return new WaitForSeconds(UnityEngine.Random.Range(0.5f, 1f));
 
         }
