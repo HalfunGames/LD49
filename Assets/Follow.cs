@@ -11,6 +11,6 @@ public class Follow : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position += (transform.position - (Target.transform.position + Offset)) * Time.deltaTime * LagConstant;
+        transform.position -= (transform.position - (Target.transform.position + Offset)) * Time.deltaTime * LagConstant;
     }
 }
