@@ -16,6 +16,7 @@ public class MasterScript : MonoBehaviour
 
     IEnumerator InstabilityMatrix()
     {
+        yield return new WaitForSeconds(1.5f);
         CoroutineStop = false;
         while (!CoroutineStop)
         {
@@ -26,14 +27,13 @@ public class MasterScript : MonoBehaviour
             TargetValue = Mathf.Clamp(TargetValue, 0f, 1f);
             ControlValue = Mathf.Clamp(ControlValue, 0f, 1f);
             yield return new WaitForSeconds(UnityEngine.Random.Range(0.5f, 1f));
-
         }
     }
 
     private void Start()
     {
-        TargetValue = 0.5f;
-        ControlValue = 0.5f;
+        TargetValue = 0f;
+        ControlValue = 1f;
         StartCoroutine("InstabilityMatrix");
     }
 
@@ -49,8 +49,11 @@ public class MasterScript : MonoBehaviour
         player.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
         player.GetComponent<Rigidbody2D>().angularVelocity = 0;
 
-        TargetValue = 0.5f;
-        ControlValue = 0.5f;
+        TargetValue = 0f;
+        ControlValue = 1f;
+
+        CoroutineStop = true;
+        StartCoroutine("InstabilityMatrix");
     }
 
     // Update is called once per frame
