@@ -28,16 +28,27 @@ public class MasterScript : MonoBehaviour
         TargetValue = 0f;
         ControlValue = 1f;
         CoroutineStop = false;
+        float waitTime = 0;
+        float currentTime = 0;
         while (!CoroutineStop)
         {
-            float TVDif = (Mathf.Abs(TargetValue - 0.5f) + 0.3f);
-            float CVDif = (Mathf.Abs(ControlValue - 0.5f) + 0.3f);
-            TargetValue += UnityEngine.Random.Range(-TVDif, TVDif);
-            ControlValue += UnityEngine.Random.Range(-CVDif, CVDif);
-            TargetValue = Mathf.Clamp(TargetValue, 0f, 1f);
-            ControlValue = Mathf.Clamp(ControlValue, 0f, 1f);
-            yield return new WaitForSeconds(UnityEngine.Random.Range(minTime, maxTime));
+            if (waitTime <= currentTime)
+            {
+                float TVDif = (Mathf.Abs(TargetValue - 0.5f) + 0.3f);
+                float CVDif = (Mathf.Abs(ControlValue - 0.5f) + 0.3f);
+                TargetValue += UnityEngine.Random.Range(-TVDif, TVDif);
+                ControlValue += UnityEngine.Random.Range(-CVDif, CVDif);
+                TargetValue = Mathf.Clamp(TargetValue, 0f, 1f);
+                ControlValue = Mathf.Clamp(ControlValue, 0f, 1f);
+                currentTime = 0;
+                waitTime = Random.Range(minTime, maxTime);
+            }
+            else
+            {
+                currentTime += Time.deltaTime;
+            }
         }
+        return null;
     }
 
     private void Start()
