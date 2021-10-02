@@ -127,10 +127,12 @@ public class MasterScript : MonoBehaviour
             if (Paused)
             {
                 Time.timeScale = 1;
+                Paused = false;
             }
             else
             {
                 Time.timeScale = 0;
+                Paused = true;
             }
         }
 
