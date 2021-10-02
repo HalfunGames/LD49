@@ -65,18 +65,24 @@ public class MasterScript : MonoBehaviour
     {
         Difficulty = 0;
         player.GetComponent<Rigidbody2D>().gravityScale = 0;
+        minTime = 1f;
+        maxTime = 2f;
     }
 
     public void setMedium()
     {
         Difficulty = 1;
         player.GetComponent<Rigidbody2D>().gravityScale = 0.5f;
+        minTime = 0.75f;
+        maxTime = 1.5f;
     }
 
     public void setNormal()
     {
         Difficulty = 3;
         player.GetComponent<Rigidbody2D>().gravityScale = 1;
+        minTime = 0.5f;
+        maxTime = 1f;
     }
 
     void Restart()
