@@ -12,13 +12,12 @@ public class MasterScript : MonoBehaviour
     public float TargetValue;
     public float ControlValue;
 
+    IEnumerator
+
     // Update is called once per frame
     void Update()
     {
-        TargetValue += UnityEngine.Random.Range(-0.5f, 0.5f);
-        ControlValue += UnityEngine.Random.Range(-0.5f, 0.5f);
-        Mathf.Clamp(TargetValue, 0, 1);
-        Mathf.Clamp(ControlValue, 0, 1);
+
         if (TargetValue < 0.5f)
         {
             if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow))
