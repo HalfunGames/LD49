@@ -15,7 +15,7 @@ public class MasterScript : MonoBehaviour
     public float TargetValue;
     public float ControlValue;
     public bool CoroutineStop = false;
-    private bool Paused = false;
+    private bool Paused = true;
     private bool GameStart = false;
 
     public GameObject PauseMenu;
