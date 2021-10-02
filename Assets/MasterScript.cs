@@ -20,8 +20,8 @@ public class MasterScript : MonoBehaviour
 
     public GameObject PauseMenu;
     public int Difficulty; // 0 - Easy, 1 - Medium, 2 - Normal
-    private minTime;
-    private maxTime;
+    private float minTime;
+    private float maxTime;
 
     IEnumerator InstabilityMatrix()
     {
@@ -37,7 +37,7 @@ public class MasterScript : MonoBehaviour
             ControlValue += UnityEngine.Random.Range(-CVDif, CVDif);
             TargetValue = Mathf.Clamp(TargetValue, 0f, 1f);
             ControlValue = Mathf.Clamp(ControlValue, 0f, 1f);
-            yield return new WaitForSeconds(UnityEngine.Random.Range(0.5f, 1f));
+            yield return new WaitForSeconds(UnityEngine.Random.Range(minTime, maxTime));
         }
     }
 
