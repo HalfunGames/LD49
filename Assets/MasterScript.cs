@@ -99,73 +99,76 @@ public class MasterScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        if (TargetValue < 0.5f)
+        if (GameStart)
         {
-            if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
+            if (TargetValue < 0.5f)
             {
-                player.GetComponent<Rigidbody2D>().AddForce(new Vector2(-Force * Time.deltaTime, 0f));
+                if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
+                {
+                    player.GetComponent<Rigidbody2D>().AddForce(new Vector2(-Force * Time.deltaTime, 0f));
+                }
+                if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
+                {
+                    player.GetComponent<Rigidbody2D>().AddForce(new Vector2(Force * Time.deltaTime, 0f));
+                }
             }
-            if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
+            else
             {
-                player.GetComponent<Rigidbody2D>().AddForce(new Vector2(Force * Time.deltaTime, 0f));
+                if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
+                {
+                    ground.GetComponent<Rigidbody2D>().AddForce(new Vector2(-Force * Time.deltaTime, 0f));
+                }
+                if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
+                {
+                    ground.GetComponent<Rigidbody2D>().AddForce(new Vector2(Force * Time.deltaTime, 0f));
+                }
+            }
+            if (ControlValue < 0.5f)
+            {
+                if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
+                {
+                    ground.GetComponent<Rigidbody2D>().AddTorque(-Force * Time.deltaTime, 0f);
+                }
+                if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow))
+                {
+                    ground.GetComponent<Rigidbody2D>().AddTorque(Force * Time.deltaTime, 0f);
+                }
+            }
+            else
+            {
+                if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
+                {
+                    ground.GetComponent<Rigidbody2D>().AddForce(new Vector2(0f, Force * Time.deltaTime));
+                }
+                if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow))
+                {
+                    ground.GetComponent<Rigidbody2D>().AddForce(new Vector2(0f, -Force * Time.deltaTime));
+                }
+            }
+
+            TargetValueText.text = TargetValue.ToString("#.00");
+            ControlValueText.text = ControlValue.ToString("#.00");
+
+            if (Input.GetKeyDown(KeyCode.R))
+            {
+                Restart();
+
+
+            }
+
+            if (Score < player.transform.position.y)
+            {
+                Score = player.transform.position.y;
+            }
+
+            ScoreValueText.text = Score.ToString("#.000");
+
+            if (Input.GetKeyDown(KeyCode.P))
+            {
+                Pause();
             }
         }
-        else
-        {
-            if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
-            {
-                ground.GetComponent<Rigidbody2D>().AddForce(new Vector2(-Force * Time.deltaTime, 0f));
-            }
-            if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
-            {
-                ground.GetComponent<Rigidbody2D>().AddForce(new Vector2(Force * Time.deltaTime, 0f));
-            }
-        }
-        if (ControlValue < 0.5f)
-        {
-            if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
-            {
-                ground.GetComponent<Rigidbody2D>().AddTorque(-Force * Time.deltaTime, 0f);
-            }
-            if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow))
-            {
-                ground.GetComponent<Rigidbody2D>().AddTorque(Force * Time.deltaTime, 0f);
-            }
-        }
-        else
-        {
-            if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
-            {
-                ground.GetComponent<Rigidbody2D>().AddForce(new Vector2(0f, Force * Time.deltaTime));
-            }
-            if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow))
-            {
-                ground.GetComponent<Rigidbody2D>().AddForce(new Vector2(0f, -Force * Time.deltaTime));
-            }
-        }
 
-        TargetValueText.text = TargetValue.ToString("#.00");
-        ControlValueText.text = ControlValue.ToString("#.00");
-
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            Restart();
-
-
-        }
-
-        if (Score < player.transform.position.y)
-        {
-            Score = player.transform.position.y;
-        }
-
-        ScoreValueText.text = Score.ToString("#.000");
-
-        if (Input.GetKeyDown(KeyCode.P))
-        {
-            Pause();
-        }
 
     }
 }
