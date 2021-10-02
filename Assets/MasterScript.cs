@@ -122,5 +122,17 @@ public class MasterScript : MonoBehaviour
 
         ScoreValueText.text = Score.ToString("#.000");
 
+        if (Input.GetKeyDown("P"))
+        {
+            if (Paused)
+            {
+                Time.timeScale = 1;
+            }
+            else
+            {
+                Time.timeScale = 0;
+            }
+        }
+
     }
 }
