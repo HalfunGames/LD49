@@ -9,12 +9,16 @@ public class MasterScript : MonoBehaviour
     public float Force;
     public TextMeshProUGUI TargetValueText;
     public TextMeshProUGUI ControlValueText;
+    public float TargetValue;
+    public float ControlValue;
 
     // Update is called once per frame
     void Update()
     {
-        float TargetValue = UnityEngine.Random.Range(0f, 1f);
-        float ControlValue = UnityEngine.Random.Range(0f, 1f);
+        TargetValue += UnityEngine.Random.Range(-0.5f, 0.5f);
+        ControlValue += UnityEngine.Random.Range(-0.5f, 0.5f);
+        Mathf.Clamp(TargetValue, 0, 1);
+        Mathf.Clamp(ControlValue, 0, 1);
         if (TargetValue < 0.5f)
         {
             if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow))
