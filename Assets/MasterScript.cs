@@ -130,13 +130,13 @@ public class MasterScript : MonoBehaviour
             {
                 Time.timeScale = 1;
                 Paused = false;
-                PauseMenu.setDisabled(true);
+                PauseMenu.SetActive(true);
             }
             else
             {
                 Time.timeScale = 0;
                 Paused = true;
-                PauseMenu.setDisabled(false);
+                PauseMenu.SetActive(false);
             }
         }
 
