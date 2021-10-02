@@ -122,7 +122,7 @@ public class MasterScript : MonoBehaviour
 
         ScoreValueText.text = Score.ToString("#.000");
 
-        if (Input.GetKeyDown("P"))
+        if (Input.GetKeyDown(KeyCode.P))
         {
             if (Paused)
             {
