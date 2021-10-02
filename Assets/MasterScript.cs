@@ -47,8 +47,9 @@ public class MasterScript : MonoBehaviour
             {
                 currentTime += Time.deltaTime;
             }
+            yield return new WaitForSeconds(0.01f);
         }
-        return null;
+
     }
 
     private void Start()
