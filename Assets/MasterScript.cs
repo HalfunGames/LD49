@@ -52,6 +52,7 @@ public class MasterScript : MonoBehaviour
     public void setEasy()
     {
         Difficulty = 0;
+        player.GetComponent<Rigidbody2D>().gravityScale = 0;
     }
 
     public void setMedium()
