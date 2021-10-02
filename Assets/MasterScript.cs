@@ -27,7 +27,6 @@ public class MasterScript : MonoBehaviour
     {
         TargetValue = 0f;
         ControlValue = 1f;
-        yield return new WaitForSeconds(1.5f);
         CoroutineStop = false;
         while (!CoroutineStop)
         {
