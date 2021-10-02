@@ -11,6 +11,7 @@ public class MasterScript : MonoBehaviour
     public TextMeshProUGUI TargetValueText;
     public TextMeshProUGUI ControlValueText;
     public TextMeshProUGUI ScoreValueText;
+    public TextMeshProUGUI DifficultyText;
     public float Score = 0;
     public float TargetValue;
     public float ControlValue;
@@ -69,6 +70,7 @@ public class MasterScript : MonoBehaviour
         player.GetComponent<Rigidbody2D>().gravityScale = 0;
         minTime = 1f;
         maxTime = 2f;
+        DifficultyText.text = "Easy Mode";
         StartGame();
     }
 
@@ -78,6 +80,7 @@ public class MasterScript : MonoBehaviour
         player.GetComponent<Rigidbody2D>().gravityScale = 0.5f;
         minTime = 0.75f;
         maxTime = 1.5f;
+        DifficultyText.text = "Medium Mode";
         StartGame();
     }
 
@@ -87,6 +90,7 @@ public class MasterScript : MonoBehaviour
         player.GetComponent<Rigidbody2D>().gravityScale = 1;
         minTime = 0.5f;
         maxTime = 1f;
+        DifficultyText.text = "Normal Mode";
         StartGame();
     }
 
