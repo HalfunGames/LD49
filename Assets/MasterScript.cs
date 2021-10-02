@@ -111,7 +111,7 @@ public class MasterScript : MonoBehaviour
         {
             Time.timeScale = 1;
             Paused = false;
-            PauseMenu.SetActive(true);
+            PauseMenu.SetActive(false);
         }
         else
         {
@@ -120,7 +120,7 @@ public class MasterScript : MonoBehaviour
                 Time.timeScale = 0;
             }
             Paused = true;
-            PauseMenu.SetActive(false);
+            PauseMenu.SetActive(true);
         }
     }
 
