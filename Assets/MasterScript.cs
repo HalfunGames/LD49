@@ -19,6 +19,7 @@ public class MasterScript : MonoBehaviour
     private bool GameStart = false;
 
     public GameObject PauseMenu;
+    public int Difficulty; // 0 - Easy, 1 - Medium, 2 - Normal
 
     IEnumerator InstabilityMatrix()
     {
