@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using TMPro;
 
@@ -11,8 +12,25 @@ public class MasterScript : MonoBehaviour
     public TextMeshProUGUI ControlValueText;
     public float TargetValue;
     public float ControlValue;
+    public bool CoroutineStop = false;
 
-    IEnumerator
+    IEnumerator InstabilityMatrix()
+    {
+        while (!CoroutineStop)
+        {
+            TargetValue += UnityEngine.Random.Range(-0.1f, 0.1f);
+            ControlValue += UnityEngine.Random.Range(-0.1f, 0.1f);
+            Mathf.Clamp(TargetValue, 0f, 1f);
+            Mathf.Clamp(ControlValue, 0f, 1f);
+            yield return new WaitForSeconds(UnityEngine.Random.Range(0.5f, 1f));
+
+        }
+    }
+
+    private void Start()
+    {
+        StartCoroutine("InstabilityMatrix");
+    }
 
     // Update is called once per frame
     void Update()
