@@ -18,7 +18,7 @@ public class MasterScript : MonoBehaviour
     {
         while (!CoroutineStop)
         {
-            TargetValue += UnityEngine.Random.Range(-0.1f, 0.1f);
+            TargetValue += UnityEngine.Random.Range(-(Mathf.Abs(TargetValue - 0.5f)), (TargetValue - 0.5f));
             ControlValue += UnityEngine.Random.Range(-0.1f, 0.1f);
             Mathf.Clamp(TargetValue, 0f, 1f);
             Mathf.Clamp(ControlValue, 0f, 1f);
@@ -29,8 +29,8 @@ public class MasterScript : MonoBehaviour
 
     private void Start()
     {
-        TargetValue = 0.5;
-        ControlValue = 0.5
+        TargetValue = 0.5f;
+        ControlValue = 0.5f;
         StartCoroutine("InstabilityMatrix");
     }
 
