@@ -44,6 +44,22 @@ public class MasterScript : MonoBehaviour
     }
     public void StartGame()
     {
+        Restart();
+        Time.timeScale = 1;
+    }
+
+    public void setEasy()
+    {
+
+    }
+
+    public void setMedium()
+    {
+
+    }
+
+    public void setNormal()
+    {
 
     }
 
